@@ -47,8 +47,8 @@ then
 	
 	if type -P nmcli &>/dev/null
 	then
-        ## working with: nmcli tool, version 1.4.2
-        networkID=`nmcli -t -f active,ssid dev wifi | egrep '^yes' | cut -d':' -f2`
+        	## working with: nmcli tool, version 1.4.4
+        	networkID=`nmcli -t -f active,name con | egrep '^yes' | cut -d':' -f2`
 	else
 		# try ESSID if nmcli is not installed
 		logger -p user.notice -t $log_tag "nmcli not detected, will use essid"
